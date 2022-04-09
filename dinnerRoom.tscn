@@ -1,0 +1,215 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://LeelaUIb.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Pics/diner Room.jpg" type="Texture" id=2]
+[ext_resource path="res://sprites/son.png" type="Texture" id=3]
+[ext_resource path="res://conan2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://conan3.gd" type="Script" id=5]
+[ext_resource path="res://17-172161_right-png-icon-arrow-icon-hand-drawn.png" type="Texture" id=6]
+[ext_resource path="res://AGENCYB.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/_-removebg-preview.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 3.43141 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 3
+font_data = ExtResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 41.7961, 48.469 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 56.792, 1.21428 )
+
+[sub_resource type="SegmentShape2D" id=5]
+a = Vector2( 0.76178, -10.36 )
+b = Vector2( -0.132355, 13.1972 )
+
+[sub_resource type="SegmentShape2D" id=6]
+a = Vector2( -0.13237, -12.3 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 93.0645, 104.573 )
+
+[node name="dinnerRoom" type="Node2D"]
+
+[node name="PopupEnd" type="PopupMenu" parent="."]
+margin_left = 631.158
+margin_top = 228.0
+margin_right = 1429.16
+margin_bottom = 728.0
+
+[node name="TextureButton" type="TextureButton" parent="PopupEnd"]
+margin_left = 54.8033
+margin_top = 398.148
+margin_right = 227.803
+margin_bottom = 457.148
+
+[node name="Label" type="Label" parent="PopupEnd/TextureButton"]
+margin_left = 25.7434
+margin_top = -8.63391
+margin_right = 175.743
+margin_bottom = 50.3661
+custom_fonts/font = SubResource( 8 )
+text = "ย้อนกลับ"
+
+[node name="TextureButton2" type="TextureButton" parent="PopupEnd"]
+margin_left = 548.038
+margin_top = 390.038
+margin_right = 773.038
+margin_bottom = 437.038
+
+[node name="Label" type="Label" parent="PopupEnd/TextureButton2"]
+margin_left = 11.5667
+margin_top = -2.39148
+margin_right = 221.567
+margin_bottom = 56.6085
+custom_fonts/font = SubResource( 8 )
+text = "พร้อมแล้ว!!!"
+
+[node name="Label" type="Label" parent="PopupEnd"]
+margin_left = 97.0109
+margin_top = 72.2185
+margin_right = 787.011
+margin_bottom = 375.219
+custom_fonts/font = SubResource( 9 )
+text = "คุณพร้อมที่จะจับตัวฆาตกรรึยัง?"
+
+[node name="diner Room" type="Sprite" parent="."]
+position = Vector2( 1003.92, 555.233 )
+scale = Vector2( 0.976585, 0.832428 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="son" type="Sprite" parent="."]
+position = Vector2( 1417.11, 760.567 )
+scale = Vector2( 5.32381, 5.72509 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="son" type="Area2D" parent="son"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="son/son"]
+position = Vector2( -0.596069, 20.5087 )
+shape = SubResource( 1 )
+
+[node name="Char2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1049.19, 1043.01 )
+scale = Vector2( 1.6, 1.84571 )
+script = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="Char2"]
+position = Vector2( -35.5012, -103.404 )
+scale = Vector2( 2.28141, 9.65562 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = 0
+limit_right = 2000
+limit_bottom = 1100
+
+[node name="17-172161_right-png-icon-arrow-icon-hand-drawn" type="Sprite" parent="."]
+position = Vector2( -240, 540 )
+scale = Vector2( 0.170166, 0.205959 )
+texture = ExtResource( 6 )
+offset = Vector2( 12418.4, 2418.19 )
+
+[node name="17-172161_right-png-icon-arrow-icon-hand-drawn2" type="Sprite" parent="."]
+position = Vector2( 140.04, 1047.23 )
+rotation = 3.13888
+scale = Vector2( 0.170166, 0.205959 )
+texture = ExtResource( 6 )
+offset = Vector2( -36.5665, 19.3142 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1804.48
+margin_top = 935.049
+margin_right = 2090.48
+margin_bottom = 1056.05
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.976471, 0.976471, 0.976471, 1 )
+text = "KITCHEN"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 80.0966
+margin_top = 923.091
+margin_right = 366.097
+margin_bottom = 1044.09
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.976471, 0.976471, 0.976471, 1 )
+text = "BEDROOM"
+
+[node name="to_bedroom" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_bedroom"]
+position = Vector2( 210.546, 1036.8 )
+rotation = 1.54265
+shape = SubResource( 3 )
+
+[node name="to_kitchen" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_kitchen"]
+position = Vector2( 1792.54, 1034.41 )
+rotation = 1.54265
+shape = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="button" parent="CanvasLayer" instance=ExtResource( 8 )]
+position = Vector2( 120, 500 )
+
+[node name="InfoMenu" type="PopupMenu" parent="."]
+margin_left = 1417.11
+margin_top = 760.567
+margin_right = 1437.11
+margin_bottom = 780.567
+
+[node name="Button" type="Button" parent="InfoMenu"]
+margin_left = 38.1936
+margin_top = -262.798
+margin_right = 268.194
+margin_bottom = -43.7982
+rect_scale = Vector2( 0.723465, 0.532728 )
+icon = ExtResource( 9 )
+flat = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 1413.94, 877.981 )
+scale = Vector2( 5.32381, 5.72509 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 3.17096, 9.04587 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 24.1407, -3.88002 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -23.8427, -1.10858 )
+shape = SubResource( 6 )
+
+[node name="Ending" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ending"]
+position = Vector2( 1017.67, 774.311 )
+shape = SubResource( 7 )
+[connection signal="pressed" from="PopupEnd/TextureButton" to="Char2" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="PopupEnd/TextureButton2" to="Char2" method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="InfoMenu/Button" to="Char2" method="_on_Button_pressed"]

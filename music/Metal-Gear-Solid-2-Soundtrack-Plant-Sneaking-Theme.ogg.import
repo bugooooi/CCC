@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Metal-Gear-Solid-2-Soundtrack-Plant-Sneaking-Theme.ogg-529d1aacda405c02e7859d335e8db712.oggstr"
+
+[deps]
+
+source_file="res://music/Metal-Gear-Solid-2-Soundtrack-Plant-Sneaking-Theme.ogg"
+dest_files=[ "res://.import/Metal-Gear-Solid-2-Soundtrack-Plant-Sneaking-Theme.ogg-529d1aacda405c02e7859d335e8db712.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

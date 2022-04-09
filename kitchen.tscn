@@ -1,0 +1,171 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Pics/kitchen.jpg" type="Texture" id=1]
+[ext_resource path="res://Butler.tscn" type="PackedScene" id=2]
+[ext_resource path="res://conan2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://conan4.gd" type="Script" id=4]
+[ext_resource path="res://AGENCYB.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://17-172161_right-png-icon-arrow-icon-hand-drawn.png" type="Texture" id=6]
+[ext_resource path="res://button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sprites/_-removebg-preview.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 49.5605, 18.3914 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 150
+outline_size = 4
+font_data = ExtResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 214.388, 177.809 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 146.892, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 261.55, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 142.619, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 111.63, 8.53314 )
+
+[sub_resource type="SegmentShape2D" id=8]
+a = Vector2( -97.9591, 297.752 )
+b = Vector2( 304.846, 290.199 )
+
+[sub_resource type="SegmentShape2D" id=9]
+a = Vector2( -42.5734, 325.444 )
+b = Vector2( -47.6085, 5.71777 )
+
+[sub_resource type="SegmentShape2D" id=10]
+a = Vector2( 7.77722, 426.146 )
+
+[node name="kitchen" type="Node2D"]
+
+[node name="kitchen" type="Sprite" parent="."]
+position = Vector2( 885.36, 504.887 )
+scale = Vector2( 0.918208, 0.890287 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="butler" parent="." instance=ExtResource( 2 )]
+position = Vector2( 359.061, 833.503 )
+rotation = 0.0174533
+
+[node name="butler2" type="Area2D" parent="butler"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="butler/butler2"]
+shape = SubResource( 1 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 907.131, 857.676 )
+scale = Vector2( 1.32, 1.6 )
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( -1.55347, -140.975 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = 0
+limit_right = 1750
+limit_bottom = 1000
+
+[node name="Label" type="Label" parent="."]
+margin_left = 863.28
+margin_top = 364.997
+margin_right = 1196.28
+margin_bottom = 605.997
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "HALL"
+
+[node name="17-172161_right-png-icon-arrow-icon-hand-drawn" type="Sprite" parent="."]
+position = Vector2( 787.515, 534.756 )
+rotation = -1.59223
+scale = Vector2( 0.249596, 0.31503 )
+texture = ExtResource( 6 )
+
+[node name="to_hall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_hall"]
+position = Vector2( 914.544, 551.597 )
+shape = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="button" parent="CanvasLayer" instance=ExtResource( 7 )]
+position = Vector2( 120, 500 )
+
+[node name="groundX" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="groundX"]
+position = Vector2( 1425.13, 801.764 )
+rotation = 1.02497
+shape = SubResource( 4 )
+
+[node name="groundY" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="groundY"]
+position = Vector2( 1628.13, 887.886 )
+shape = SubResource( 5 )
+
+[node name="TuY" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TuY"]
+position = Vector2( 1734.76, 836.623 )
+shape = SubResource( 6 )
+
+[node name="TuX" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TuX"]
+position = Vector2( 1535.86, 777.157 )
+rotation = 0.617728
+shape = SubResource( 7 )
+
+[node name="InfoMenu" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Button" type="Button" parent="InfoMenu"]
+margin_left = 379.917
+margin_top = 466.316
+margin_right = 609.917
+margin_bottom = 685.316
+rect_scale = Vector2( 0.638784, 0.634167 )
+icon = ExtResource( 8 )
+flat = true
+
+[node name="InfoMenu2" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Button2" type="Button" parent="InfoMenu2"]
+margin_left = 1565.68
+margin_top = 473.869
+margin_right = 1795.68
+margin_bottom = 692.869
+rect_scale = Vector2( 0.638784, 0.634167 )
+icon = ExtResource( 8 )
+flat = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 284.481, 601.69 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 533.717, 639.453 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 211.473, 591.62 )
+shape = SubResource( 10 )
+[connection signal="pressed" from="InfoMenu/Button" to="KinematicBody2D" method="_on_Button_pressed"]
+[connection signal="pressed" from="InfoMenu2/Button2" to="KinematicBody2D" method="_on_Button_pressed"]
+[connection signal="pressed" from="InfoMenu2/Button2" to="KinematicBody2D" method="_on_Button2_pressed"]

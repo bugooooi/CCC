@@ -1,0 +1,257 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Pics/bedroom.jpg" type="Texture" id=1]
+[ext_resource path="res://sprites/wife.png" type="Texture" id=2]
+[ext_resource path="res://sprites/dad.png" type="Texture" id=3]
+[ext_resource path="res://conan2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://17-172161_right-png-icon-arrow-icon-hand-drawn.png" type="Texture" id=6]
+[ext_resource path="res://AGENCYR.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://sprites/_-removebg-preview.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.81184, 3.71165 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50.8426, 7.40503 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+outline_size = 4
+font_data = ExtResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 232.411, 29.8471 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 116.936, 9.34229 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 383.679, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 212.105, 11.7877 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 156.56, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 99.8138, 6.54401 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 188.444, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 14.9065, 171.724 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 489.572, 10 )
+
+[node name="bedroom" type="Node2D"]
+position = Vector2( 9.15527e-005, 3.19814 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 782.981 ]
+}
+
+[node name="bedroom" type="Sprite" parent="."]
+position = Vector2( 830.056, 483.658 )
+scale = Vector2( 1.57321, 2.03462 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wife" type="Sprite" parent="."]
+position = Vector2( 924.816, 623.232 )
+scale = Vector2( 4.79852, 4.99057 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wife" type="Area2D" parent="wife"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wife/wife"]
+position = Vector2( 2.2491, 21.193 )
+shape = SubResource( 1 )
+
+[node name="dad" type="Sprite" parent="."]
+position = Vector2( 457.43, 650.157 )
+rotation = 0.06963
+scale = Vector2( 6.15601, 3.80838 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Char1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1130, 869.738 )
+rotation = 0.0131103
+scale = Vector2( 1.64275, 1.8402 )
+
+[node name="Camera2D" type="Camera2D" parent="Char1"]
+position = Vector2( -2.40246, -75.6846 )
+scale = Vector2( -3.12581, 1 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = 0
+limit_right = 1650
+limit_bottom = 960
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="button" parent="CanvasLayer" instance=ExtResource( 5 )]
+position = Vector2( 120, 500 )
+
+[node name="to_hall" type="Area2D" parent="."]
+position = Vector2( 1731, 1112.51 )
+rotation = 1.59228
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="out" type="CollisionShape2D" parent="to_hall"]
+position = Vector2( -181.514, 244.078 )
+shape = SubResource( 2 )
+
+[node name="17-172161_right-png-icon-arrow-icon-hand-drawn" type="Sprite" parent="."]
+position = Vector2( 1541.2, 918.989 )
+scale = Vector2( 0.172032, 0.20699 )
+texture = ExtResource( 6 )
+
+[node name="Hall" type="Label" parent="."]
+margin_left = 1428.2
+margin_top = 751.68
+margin_right = 1652.2
+margin_bottom = 871.68
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.952941, 0.945098, 0.945098, 1 )
+text = "HALL"
+align = 1
+valign = 1
+
+[node name="bedY" type="Area2D" parent="."]
+position = Vector2( 419.93, 857.237 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bedY"]
+shape = SubResource( 4 )
+
+[node name="bedX" type="Area2D" parent="."]
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bedX"]
+position = Vector2( 705.388, 812.016 )
+rotation = -0.871904
+shape = SubResource( 5 )
+
+[node name="groundY" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 816.118, 826.371 )
+rotation = 0.31403
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="groundY"]
+position = Vector2( -357.75, 226.144 )
+rotation = -0.320916
+shape = SubResource( 6 )
+
+[node name="wall" type="Area2D" parent="."]
+position = Vector2( 1308.25, 822.269 )
+rotation = 0.4765
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2( -177.785, -87.5973 )
+rotation = 0.0335716
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall"]
+position = Vector2( 159.802, -108.205 )
+shape = SubResource( 8 )
+
+[node name="wall2" type="Area2D" parent="."]
+position = Vector2( 1308.25, 822.269 )
+rotation = 0.4765
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2( 137.478, -70.962 )
+shape = SubResource( 9 )
+
+[node name="groundX" type="Area2D" parent="."]
+position = Vector2( 8.20221, 6.15161 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="groundX"]
+position = Vector2( 1003.65, 781.83 )
+rotation = -0.0083355
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="groundX"]
+position = Vector2( 812.017, 834.573 )
+rotation = 0.31403
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="groundX"]
+position = Vector2( 1309.06, 793.878 )
+rotation = 0.4765
+shape = SubResource( 12 )
+
+[node name="InfoWife" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Button" type="Button" parent="InfoWife"]
+margin_left = 952.505
+margin_top = 407.139
+margin_right = 1182.51
+margin_bottom = 643.139
+rect_scale = Vector2( 0.463661, 0.432899 )
+icon = ExtResource( 8 )
+flat = true
+
+[node name="InfoTable" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Button3" type="Button" parent="InfoTable"]
+margin_left = 1441.25
+margin_top = 551.302
+margin_right = 1671.26
+margin_bottom = 787.302
+rect_scale = Vector2( 0.463661, 0.432899 )
+icon = ExtResource( 8 )
+flat = true
+
+[node name="InfoBed" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Button2" type="Button" parent="InfoBed"]
+margin_left = 435.627
+margin_top = 517.898
+margin_right = 665.632
+margin_bottom = 753.898
+rect_scale = Vector2( 0.463661, 0.432899 )
+icon = ExtResource( 8 )
+flat = true
+[connection signal="area_exited" from="bedX" to="Char1" method="_on_bed_area_exited"]
+[connection signal="pressed" from="InfoWife/Button" to="Char1" method="_on_Button_pressed"]
+[connection signal="pressed" from="InfoTable/Button3" to="Char1" method="_on_Button_pressed"]
+[connection signal="pressed" from="InfoTable/Button3" to="Char1" method="_on_Button3_pressed"]
+[connection signal="pressed" from="InfoBed/Button2" to="Char1" method="_on_Button2_pressed"]

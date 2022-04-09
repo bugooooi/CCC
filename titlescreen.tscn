@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Pics/background.jpg" type="Texture" id=1]
+[ext_resource path="res://Pics/mansion.png" type="Texture" id=2]
+[ext_resource path="res://Pics/logo.png" type="Texture" id=3]
+[ext_resource path="res://Start.gd" type="Script" id=4]
+[ext_resource path="res://Pics/Start But.png" type="Texture" id=5]
+[ext_resource path="res://HTP.gd" type="Script" id=6]
+[ext_resource path="res://Pics/HTP but.png" type="Texture" id=7]
+[ext_resource path="res://credit.gd" type="Script" id=8]
+[ext_resource path="res://Pics/credit but.png" type="Texture" id=9]
+[ext_resource path="res://music/Metal-Gear-Solid-2-Soundtrack-Plant-Sneaking-Theme.ogg" type="AudioStream" id=10]
+
+[node name="titlescreen" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 472.343, 388.61 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mansion" type="Sprite" parent="."]
+position = Vector2( 923.183, 354.816 )
+scale = Vector2( 1.26193, 1.17546 )
+texture = ExtResource( 2 )
+
+[node name="logo" type="Sprite" parent="."]
+position = Vector2( 503.449, 148.847 )
+scale = Vector2( 0.300516, 0.302732 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Start" type="TextureButton" parent="."]
+editor/display_folded = true
+margin_left = 81.5923
+margin_top = 290.355
+margin_right = 268.592
+margin_bottom = 354.355
+script = ExtResource( 4 )
+
+[node name="Start But" type="Sprite" parent="Start"]
+position = Vector2( 94.6396, 24.5585 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HTP" type="TextureButton" parent="."]
+editor/display_folded = true
+margin_left = 89.4177
+margin_top = 365.315
+margin_right = 430.418
+margin_bottom = 423.315
+script = ExtResource( 6 )
+
+[node name="HTP but" type="Sprite" parent="HTP"]
+position = Vector2( 175, 28 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="credit" type="TextureButton" parent="."]
+editor/display_folded = true
+margin_left = 89.8391
+margin_top = 448.996
+margin_right = 271.839
+margin_bottom = 494.996
+action_mode = 0
+script = ExtResource( 8 )
+
+[node name="credit but" type="Sprite" parent="credit"]
+position = Vector2( 95.5366, 22.8673 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+[connection signal="pressed" from="Start" to="Start" method="_on_Start_pressed"]
+[connection signal="pressed" from="HTP" to="HTP" method="_on_HTP_pressed"]
+[connection signal="pressed" from="credit" to="credit" method="_on_credit_pressed"]

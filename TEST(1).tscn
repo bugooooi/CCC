@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TEST.gd" type="Script" id=1]
+
+[node name="TEST" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="WIFE" type="Button" parent="."]
+margin_left = 244.072
+margin_top = 195.477
+margin_right = 349.072
+margin_bottom = 367.477
+text = "WIFE"
+
+[node name="SON" type="Button" parent="."]
+margin_left = 400.954
+margin_top = 167.315
+margin_right = 508.954
+margin_bottom = 387.315
+text = "SON"
+
+[node name="Butler" type="Button" parent="."]
+margin_left = 571.283
+margin_top = 174.852
+margin_right = 664.283
+margin_bottom = 369.852
+text = "Butler"
+
+[node name="Death" type="Button" parent="."]
+margin_left = 37.0001
+margin_top = 424.001
+margin_right = 242.0
+margin_bottom = 532.001
+text = "DEATH"
+
+[node name="Table" type="Button" parent="."]
+margin_left = 369.001
+margin_top = 436.001
+margin_right = 574.001
+margin_bottom = 524.001
+text = "Table"
+
+[node name="Counter" type="Button" parent="."]
+margin_left = 698.002
+margin_top = 428.001
+margin_right = 909.002
+margin_bottom = 506.001
+text = "Counter"
+[connection signal="pressed" from="WIFE" to="." method="_on_WIFE_pressed"]
+[connection signal="pressed" from="SON" to="." method="_on_SON_pressed"]
+[connection signal="pressed" from="Butler" to="." method="_on_Butler_pressed"]
+[connection signal="pressed" from="Death" to="." method="_on_Death_pressed"]
+[connection signal="pressed" from="Table" to="." method="_on_Table_pressed"]
+[connection signal="pressed" from="Counter" to="." method="_on_Counter_pressed"]

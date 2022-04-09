@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Pics/background.jpg" type="Texture" id=1]
+[ext_resource path="res://TextureButton.gd" type="Script" id=2]
+[ext_resource path="res://Pics/return but.png" type="Texture" id=3]
+[ext_resource path="res://Pics/creditdetail.png" type="Texture" id=4]
+
+[node name="credit _scene" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 460.394, 420.694 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 508.78
+margin_top = 492.455
+margin_right = 548.78
+margin_bottom = 532.455
+rect_scale = Vector2( 11.7642, 1.74454 )
+action_mode = 0
+script = ExtResource( 2 )
+
+[node name="return but" type="Sprite" parent="TextureButton"]
+position = Vector2( 19.632, 18.0135 )
+scale = Vector2( 0.0850039, 0.573218 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="creditdetail" type="Sprite" parent="."]
+position = Vector2( 510.546, 291.059 )
+scale = Vector2( 0.399805, 0.434583 )
+texture = ExtResource( 4 )
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
